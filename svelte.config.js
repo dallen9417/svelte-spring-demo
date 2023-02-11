@@ -13,10 +13,10 @@ const config = {
   kit: {
     adapter: adapter({
       pages: "frontend/build",
-      // fallback: "404.html",
-      // precompress: true
+      fallback: "index.html",
+      precompress: true
     }),
-    // prerender: { entries: [] },
+    prerender: { entries: [] },
     appDir: "_app",
     files: {
       assets: `${svelteDir}/static`,

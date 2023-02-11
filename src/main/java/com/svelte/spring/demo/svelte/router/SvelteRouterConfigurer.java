@@ -2,8 +2,9 @@ package com.svelte.spring.demo.svelte.router;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
@@ -18,27 +19,29 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class SvelteRouterConfigurer implements WebMvcConfigurer {
 
   private static final Logger logger = LogManager.getLogger();
-  private final List<String> files;
+  private static final String DIR = "classpath:/static/_app/immutable/components/pages/**";
+  private final Set<String> files;
 
   public SvelteRouterConfigurer(ApplicationContext context) throws IOException {
     this.files = Stream.of(
-            context.getResources("classpath:/static/**/*.html"))
-        .map(r -> getPath(r))
-        .toList();
+            context.getResources(DIR))
+        .map(r -> getParent(r))
+        .collect(Collectors.toUnmodifiableSet());
   }
 
   @Override
   public void addViewControllers(ViewControllerRegistry registry) {
     for (String file : files) {
-      String uri = StringUtils.substringBetween(
-          file, "/static", ".html");
-      registry.addViewController(uri);
+      String uri = StringUtils.substringAfter(file, "/pages");
+      if (uri.length() > 0) {
+        registry.addRedirectViewController(uri, "/");
+      }
     }
   }
 
-  private static String getPath(Resource resource) {
+  private static String getParent(Resource resource) {
     return getFile(resource)
-        .map(File::getPath)
+        .map(File::getParent)
         .map(p -> p.replace("\\", "/"))
         .orElse(null);
   }

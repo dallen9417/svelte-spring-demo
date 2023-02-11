@@ -1,6 +1,13 @@
 <script>
+  import {beforeNavigate} from "$app/navigation";
   import Header from "./Header.svelte";
   import "./styles.css";
+
+  beforeNavigate(navigation => {
+    if (navigation.willUnload) {
+      navigation.cancel();
+    }
+  });
 </script>
 
 <div class="app">
