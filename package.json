@@ -10,24 +10,42 @@
     "lint": "prettier --plugin-search-dir src/main/webapp --check . && eslint .",
     "format": "prettier --plugin-search-dir src/main/webapp --write ."
   },
+  "browserslist": [
+    "Firefox 38"
+  ],
   "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@babel/preset-env": "^7.20.2",
     "@fontsource/fira-mono": "^4.5.10",
     "@neoconfetti/svelte": "^1.0.0",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-inject": "^5.0.3",
+    "@rollup/plugin-legacy": "^3.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "@sveltejs/adapter-static": "^2.0.0",
     "@sveltejs/kit": "^1.5.0",
     "@types/cookie": "^0.5.1",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
+    "browserslist": "^4.21.5",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "prettier": "^2.8.0",
     "prettier-plugin-svelte": "^2.8.1",
+    "rollup-plugin-external-globals": "^0.7.1",
     "svelte": "^3.54.0",
     "svelte-check": "^3.0.1",
     "tslib": "^2.4.1",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@babel/runtime": "^7.20.13",
+    "core-js": "^3.27.2",
+    "systemjs": "^6.13.0"
+  }
 }

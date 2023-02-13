@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import {beforeNavigate} from "$app/navigation";
   import Header from "./Header.svelte";
   import "./styles.css";

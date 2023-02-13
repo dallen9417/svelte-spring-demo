@@ -1,0 +1,15 @@
+{
+  "sourceType": "module",
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": "Firefox 38",
+        "useBuiltIns": "usage",
+        "corejs": "3",
+        "modules": "systemjs"
+      }
+    ]
+  ],
+  "plugins": ["@babel/plugin-transform-runtime"]
+}
