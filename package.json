@@ -19,23 +19,18 @@
     "@babel/preset-env": "^7.20.2",
     "@fontsource/fira-mono": "^4.5.10",
     "@neoconfetti/svelte": "^1.0.0",
-    "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-commonjs": "^24.0.1",
-    "@rollup/plugin-inject": "^5.0.3",
-    "@rollup/plugin-legacy": "^3.0.1",
-    "@rollup/plugin-node-resolve": "^15.0.1",
     "@sveltejs/adapter-static": "^2.0.0",
     "@sveltejs/kit": "^1.5.0",
     "@types/cookie": "^0.5.1",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
+    "@vitejs/plugin-legacy": "^4.0.1",
     "browserslist": "^4.21.5",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "prettier": "^2.8.0",
     "prettier-plugin-svelte": "^2.8.1",
-    "rollup-plugin-external-globals": "^0.7.1",
     "svelte": "^3.54.0",
     "svelte-check": "^3.0.1",
     "tslib": "^2.4.1",
@@ -45,7 +40,6 @@
   "type": "module",
   "dependencies": {
     "@babel/runtime": "^7.20.13",
-    "core-js": "^3.27.2",
-    "systemjs": "^6.13.0"
+    "core-js": "^3.27.2"
   }
 }
